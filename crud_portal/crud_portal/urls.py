@@ -14,8 +14,12 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import path
+from django.urls import include, path
+import forms_builder.forms.urls
 
 urlpatterns = [
+    path('', include('firstapp.urls')), # come primo parametro se vuoto imposto la home, altrimenti il percorso es: post/
     path('admin/', admin.site.urls),
+    path('forms/',include('forms_builder.forms.urls')), # per costruire i campi del DB in maniera dinamica
+
 ]

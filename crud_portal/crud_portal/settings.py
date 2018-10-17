@@ -37,8 +37,13 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'firstapp',	
+    'forms_builder.forms',
+    'firstapp',
+    'django.contrib.sites',     # fondamentale, dopo aver installato django-form-builder manage.py migrate dava errore, risolto con questa aggiunta
+	
 ]
+
+SITE_ID = 1
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
